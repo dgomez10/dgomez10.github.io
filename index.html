@@ -54,9 +54,6 @@ def route_user(message)
 	gets.chomp
 end
 
-#Need a method block of code that will take a look at each key (line)find the number of the value (station) (index) and subtract it
-#from the index of the intersection of the specific line. To resolve neg intergers use the .abs method
-
 def my_trip_to_intersection(mta, line, station)
 	station_index = mta[line].index(station).to_i
 	intersection_index = mta[line].index("Union Square").to_i
