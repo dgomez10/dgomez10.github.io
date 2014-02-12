@@ -40,9 +40,56 @@
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>
+
+mta = {
+	:N => ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'], 
+	:L => ['8th', '6th', 'Union Square', '3rd', '1st'],  
+	:_6 => ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
+}
+
+
+def route_user(message)
+	puts message
+	gets.chomp
+end
+
+#Need a method block of code that will take a look at each key (line)find the number of the value (station) (index) and subtract it
+#from the index of the intersection of the specific line. To resolve neg intergers use the .abs method
+
+def my_trip_to_intersection(mta, line, station)
+	station_index = mta[line].index(station).to_i
+	intersection_index = mta[line].index("Union Square").to_i
+	total_stops = (station_index - intersection_index).abs 
+end
+
+
+def my_trip_to_same_line(mta, line, station, station2)
+	station_index = mta[line].index(station).to_i
+	station2_index = mta[line].index(station2).to_i
+	total_stops = (station2_index - station_index).abs 
+end
+
+begin_line = route_user("What line are you getting on? [N, L, _6]").to_sym
+begin_stop = route_user("What stop are you getting on? #{mta[begin_line]}")
+end_line = route_user("What line are you getting off on? [N, L, _6]").to_sym
+end_stop = route_user("What stop are you getting off on? #{mta[end_line]}")
+
+
+# call the method? 
+
+if begin_line == end_line
+	total_start_stops = my_trip_to_same_line(mta, begin_line, begin_stop, end_stop)
+	total_end_stops = 0 
+else
+	total_start_stops = my_trip_to_intersection(mta, begin_line, begin_stop)
+	total_end_stops = my_trip_to_intersection(mta, end_line, end_stop)
+end
+
+total_distance = total_start_stops + total_end_stops
+
+puts "Your trip from #{begin_stop} to #{end_stop} has a total of #{total_distance} stops." 
+
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
