@@ -17,9 +17,9 @@
 		
 		function freakingLoad(){
 		var map = new google.maps.Map(document.getElementById('mapohm'));
-		{map.getCenter(zoom: 10).panTo(latLng:37.779415|-122.4130355)}; 
+		for ('load' == true) {	map.getCenter.getZoom("10").panTo(latLng:"37.779415"|"-122.4130355");}
       			}
-      		google.maps.event.addDomListener(window, 'load', initialize);
+      		google.maps.event.addDomListener(window, 'load', freakingLoad);
 	</script>
 
   </head>
@@ -32,7 +32,6 @@
 
     <div class="wrapper">
 
-      <section>
         <div id="title">
           <h1>dgomez10.github.io</h1>
           <p></p>
@@ -111,11 +110,6 @@ puts "Your trip from #{begin_stop} to #{end_stop} has a total of #{total_distanc
 
 </h3>
 
-<!--
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-  -->
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
               <script type="text/javascript">
