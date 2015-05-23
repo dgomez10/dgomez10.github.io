@@ -12,18 +12,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"> 
+		
 		var mapfeats = function createMap(){
+		var mapreq = document.innerHTML("https://maps.googleapis.com/maps/api/js?sensor=true")
+		var  map =  mapreq.google.maps.Map(document.onmouseover.getElementById( 'map-canvas' ),options);
      		options = {
        		 zoom: 4,
-        	center: new google.maps.LatLng( 36.73, 10 ),
+        	center: new google.maps.LatLng( "36.73, 10" ),
        		 mapTypeId: google.maps.MapTypeId.ROADMAP,
-   	 },
-    
-   		 map = new google.maps.Map( 
-        document.onmouseover.getElementById( 'map-canvas' ), 
-        options);
-  		 var bub1 =  map.onClickable.lat(35.0761882).lng(1.04515982);
-    		var bub2 = map.onClickable.lat(40.5569782).lng(8.56081142);
+   	 		},
+    	   	var bub1 =  map.onClickable.lat("35.0761882").lng("1.04515982");
+    		var bub2 = map.onClickable.lat("40.5569782").lng("8.56081142");
    	 var pup = bub1[LatLng: {lat, lng}] + bub2[LatLng: {lat, lng}]
    	 for (pup.length[i]; i += say, say = 37; say--) { 
         forEach(map.pup.Marker(shape: oval) ); 
